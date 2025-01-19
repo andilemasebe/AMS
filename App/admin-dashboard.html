@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="dashboard-container">
+<nav class="sidebar">
+<div class="logo">
+<h2>Admin Panel</h2>
+</div>
+<ul class="nav-links" style="text-align: left;">
+<li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+<li><a href="#"><i class="fas fa-users"></i> User Management</a></li>
+<li><a href="#"><i class="fas fa-user-shield"></i> Roles & Permissions</a></li>
+<li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+<li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+<li><a href="#"><i class="fas fa-history"></i> Audit Logs</a></li>
+<li class="logout"><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+</ul>
+</nav>
+<main class="main-content">
+<header>
+<div class="search-bar">
+<input type="text" placeholder="Search users...">
+<i class="fas fa-search"></i>
+</div>
+<div class="user-profile">
+<span class="admin-badge">Admin</span>
+<img src="https://via.placeholder.com/40" alt="Admin Profile">
+<span>Admin User</span>
+</div>
+</header>
+<div class="dashboard-content">
+<div class="cards">
+<div class="card">
+<h3>Total Users</h3>
+<p>1,234</p>
+<i class="fas fa-users"></i>
+</div>
+<div class="card">
+<h3>Active Users</h3>
+<p>892</p>
+<i class="fas fa-user-check"></i>
+</div>
+<div class="card">
+<h3>Pending Approvals</h3>
+<p>45</p>
+<i class="fas fa-user-clock"></i>
+</div>
+</div>
+
+<!-- User Management Section -->
+<div class="admin-section">
+<h2>User Management</h2>
+<div class="action-bar">
+<button class="add-user-btn"><i class="fas fa-plus"></i> Add User</button>
+<button class="export-btn"><i class="fas fa-download"></i> Export</button>
+</div>
+<table class="user-table">
+<thead>
+<tr>
+<th>User</th>
+<th>Role</th>
+<th>Status</th>
+<th>Last Login</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>Admin</td>
+<td><span class="status active">Active</span></td>
+<td>2023-10-25 10:30</td>
+<td>
+<button class="action-btn edit"><i class="fas fa-edit"></i></button>
+<button class="action-btn delete"><i class="fas fa-trash"></i></button>
+</td>
+</tr>
+<!-- Add more rows as needed -->
+</tbody>
+</table>
+</div>
+
+<!-- Permissions Management -->
+<div class="admin-section">
+<h2>Role Management</h2>
+<div class="roles-grid">
+<div class="role-card">
+<h3>Administrator</h3>
+<ul class="permissions-list">
+<li><i class="fas fa-check"></i> Full System Access</li>
+<li><i class="fas fa-check"></i> User Management</li>
+<li><i class="fas fa-check"></i> Role Management</li>
+</ul>
+<button class="edit-role-btn">Edit Role</button>
+</div>
+<div class="role-card">
+<h3>Moderator</h3>
+<ul class="permissions-list">
+<li><i class="fas fa-check"></i> Content Management</li>
+<li><i class="fas fa-check"></i> User Monitoring</li>
+<li><i class="fas fa-times"></i> System Settings</li>
+</ul>
+<button class="edit-role-btn">Edit Role</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body>
+</html>

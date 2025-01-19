@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DOCTYPE Declaration Tests</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.19.1.js"></script>
+  
+  <script>
+    QUnit.module('DOCTYPE Declaration Tests');
+
+    QUnit.test('DOCTYPE declaration exists', function(assert) {
+      const doctype = document.doctype;
+      assert.ok(doctype, 'Document has a DOCTYPE declaration');
+    });
+
+    QUnit.test('DOCTYPE is HTML5', function(assert) {
+      const doctype = document.doctype;
+      assert.equal(doctype.name, 'html', 'DOCTYPE declares HTML5');
+      assert.equal(doctype.publicId, '', 'DOCTYPE has no public identifier');
+      assert.equal(doctype.systemId, '', 'DOCTYPE has no system identifier');
+    });
+
+    QUnit.test('DOCTYPE case sensitivity', function(assert) {
+      const htmlContent = document.documentElement.outerHTML;
+      assert.ok(htmlContent.includes('<!DOCTYPE html>'), 'DOCTYPE is properly cased');
+    });
+  </script>
+</body>
+</html>

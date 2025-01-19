@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="gradient-bg">
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="logo.png" alt="AMS Logo" class="logo-img">
+            <h1>AMS</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-button hover-effect" onclick="showLogin()">Login</a></li>
+            <li><a href="#" class="nav-button hover-effect" onclick="showRegister()">Register</a></li>
+            <li><a href="#" id="logoutBtn" class="nav-button hover-effect hidden" onclick="handleLogout()">Logout</a></li>
+            <li><a href="#" id="profileBtn" class="nav-button hover-effect hidden" onclick="showProfile()"><i class="fas fa-user"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm" class="form-container card-shadow">
+            <h2 class="form-title">Login to AMS</h2>
+            <form onsubmit="handleLogin(event)" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-input hover-effect" placeholder="Enter your email" required>
+                    <span class="validation-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-input hover-effect" placeholder="Enter your password" required>
+                    <span class="password-toggle hover-effect" onclick="togglePassword('loginPassword')">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    <span class="validation-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label for="role">Login As</label>
+                    <select id="role" class="form-input hover-effect" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="rememberMe" class="form-checkbox">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="submit-btn hover-effect">Login</button>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" class="form-container card-shadow hidden">
+            <h2 class="form-title">Create Account</h2>
+            <form onsubmit="handleRegister(event)" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-input hover-effect" placeholder="Choose a username" required>
+                    <span class="validation-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-input hover-effect" placeholder="Enter your email" required>
+                    <span class="validation-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input hover-effect" placeholder="Create a password" required>
+                    <span class="password-toggle hover-effect" onclick="togglePassword('password')">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    <span class="validation-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-input hover-effect" placeholder="Confirm your password" required>
+                    <span class="validation-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label for="userRole">Role</label>
+                    <select id="userRole" class="form-input hover-effect" required>
+                        <option value="user">Regular User</option>
+                        <option value="manager">Manager</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn hover-effect">Register</button>
+            </form>
+        </div>
+
+        <!-- Rest of the code remains the same, just add card-shadow and hover-effect classes to appropriate elements -->
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="dashboard card-shadow hidden">
+            <!-- Previous dashboard content remains the same -->
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirmationModal" class="modal hidden">
+            <div class="modal-content card-shadow">
+                <!-- Previous modal content remains the same -->
+            </div>
+        </div>
+
+        <!-- Two-Factor Authentication Modal -->
+        <div id="tfaModal" class="modal hidden">
+            <div class="modal-content card-shadow">
+                <!-- Previous TFA modal content remains the same -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

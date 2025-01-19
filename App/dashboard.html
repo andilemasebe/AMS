@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" id="userManagement"><i class="fas fa-users"></i> User Management</a></li>
+                <li><a href="#" id="roleManagement"><i class="fas fa-user-shield"></i> Role Management</a></li>
+                <li><a href="#" id="systemSettings"><i class="fas fa-cog"></i> System Settings</a></li>
+                <li><a href="#" id="auditLogs"><i class="fas fa-history"></i> Audit Logs</a></li>
+                <li class="logout"><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search users...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="admin-profile">
+                    <span class="admin-role">Super Admin</span>
+                    <img src="admin-avatar.jpg" alt="Admin Profile">
+                    <span class="admin-name">Admin Name</span>
+                </div>
+            </header>
+            <div class="dashboard-content">
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Users</h3>
+                        <p id="userCount">0</p>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card">
+                        <h3>Active Users</h3>
+                        <p id="activeUsers">0</p>
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Approvals</h3>
+                        <p id="pendingApprovals">0</p>
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                </div>
+                <div class="user-management-section">
+                    <table id="userTable">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- User data will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
